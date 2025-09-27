@@ -1,3 +1,6 @@
+## 👨‍💻 Desenvolvedor
+**Luiz Amorim** - [GitHub](https://github.com/luizamorim2)
+
 # API - Lista de Compras Aleatórias com Catálogo
 
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen)
@@ -82,3 +85,40 @@ Siga os passos abaixo para executar a aplicação no seu ambiente de desenvolvim
     ```
     O servidor estará disponível em `http://localhost:3000`.
 
+## 📋 Exemplos de Uso dos Endpoints
+
+### Criar um Item
+```bash
+POST /itens
+Content-Type: application/json
+
+{
+  "nome": "Chocolate",
+  "preco": 350,
+  "qtd_atual": 10
+}
+```
+
+### Verificar status
+```bash
+GET /health
+```
+
+### Listar Itens
+```bash
+GET /itens
+```
+
+### Criar uma Compra
+```bash
+POST /compras
+Content-Type: application/json
+
+{
+  "item_id": 1
+}
+```
+### Listar Compras
+```bash
+GET /compras
+```
