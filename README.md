@@ -87,6 +87,11 @@ Siga os passos abaixo para executar a aplicação no seu ambiente de desenvolvim
 
 ## 📋 Exemplos de Uso dos Endpoints
 
+### Verificar status da api
+```bash
+GET /status
+```
+
 ### Criar um Item
 ```bash
 POST /itens
@@ -97,11 +102,6 @@ Content-Type: application/json
   "preco": 350,
   "qtd_atual": 10
 }
-```
-
-### Verificar status
-```bash
-GET /health
 ```
 
 ### Listar Itens
