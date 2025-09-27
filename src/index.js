@@ -20,8 +20,8 @@ const app = express();
 
 app.use(express.json({ limit: "10mb" }));
 
-app.get('/', (req, res) => {
-  res.send('');
+app.get("/status", (req, res) => {
+  res.json({ status: "online", timestamp: new Date().toISOString() });
 });
 
 app.use('/itens', itemRoutes);
