@@ -17,24 +17,23 @@ if (process.env.NODE_ENV !== 'production' && fs.existsSync('./.env.local')) {
 const isProduction = process.env.NODE_ENV === "production";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: "10mb" }));
 
-app.get('/', (res) => {
+app.get('/', (req, res) => {
   res.send('');
 });
 
 app.use('/itens', itemRoutes);
 app.use('/compras', compraRoutes);
 
-app.use((res) => {
+app.use((req, res) => {
   res.status(404).json({
     message: 'Rota não encontrada',
   });
 });
 
-app.use((err, res) => {
+app.use((req, err, res, next) => {
   console.error(`[ERROR] ${new Date().toLocaleString()}:`, err.stack);
 
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {

@@ -11,7 +11,7 @@
 
 A API está implantada em um servidor na AWS e pode ser acessada através do seguinte endpoint base:
 
-**URL Base:** ``
+**URL Base:** `https://luizext.online:8443`
 
 ---
 
