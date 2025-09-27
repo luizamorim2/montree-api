@@ -1,15 +1,13 @@
-// src/controllers/itemController.js
-const { Item } = require('../../models'); // Cuidado com o caminho relativo
+const { Item } = require('../../models');
 
 const itemController = {
-  // POST /itens: Cria um novo item
   create: async (req, res) => {
     try {
       const { nome, preco, qtd_atual } = req.body;
 
       const itemExistente = await Item.findOne({ where: { nome } });
       if (itemExistente) {
-        return res.status(409).json({ error: 'Já existe um item com este nome.' }); // 409 Conflict
+        return res.status(409).json({ error: 'Já existe um item com este nome.' });
       }
 
       const newItem = await Item.create({ nome, preco, qtd_atual });
@@ -20,7 +18,6 @@ const itemController = {
     }
 },
 
-  // GET /itens: Lista todos os itens
   getAll: async (req, res) => {
     try {
       const items = await Item.findAll();

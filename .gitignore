@@ -7,3 +7,4 @@ node_modules
 # Banco de dados local
 *.sqlite
 127.0.0.1
+/certs
